@@ -1,0 +1,188 @@
+<?php
+#Used to format menu displays
+class Menu_engine extends CI_Model{
+
+	var $menu_level = 0;
+	
+	#Constructor
+	function Menu_engine()
+	{
+		parent::__construct();
+		$this->load->database();
+	}
+	
+	function menu_bucket ()
+	{
+		#Dashboard
+		$menu_array['dashboard']['attr'] = array('text'=>'Dashboard', 'url'=>base_url() . 'user/dashboard', 'id'=>'menu-dashboard', 'classes'=>'icon-dashboard');
+		
+		#User links
+		$menu_array['users']['attr'] = array('text'=>'Users', 'url'=>'javascript:void(0);', 'id'=>'menu-users', 'classes'=>'icon-user');
+		$menu_array['users']['child']['view_user_list'] = array('text'=>'Manage users', 'url'=>base_url() . 'admin/manage_users', 'id'=>'menu-manage-users', 'classes'=>'');
+		$menu_array['users']['child']['add_users'] = array('text'=>'Add user', 'url'=>base_url() . 'user/load_user_form', 'id'=>'menu-add-user', 'classes'=>'');
+		$menu_array['users']['child']['view_user_groups'] = array('text'=>'User groups', 'url'=>base_url() . 'admin/manage_user_groups', 'id'=>'menu-user-groups', 'classes'=>'');
+		$menu_array['users']['child']['add_user_group'] = array('text'=>'Add user group', 'url'=>base_url() . 'admin/user_group_form', 'id'=>'menu-add-user-group', 'classes'=>'');
+		
+		#PDE links
+		$menu_array['pdes']['attr'] = array('text'=>'PDEs', 'url'=>'javascript:void(0);', 'id'=>'menu-pdes', 'classes'=>'icon-barcode');
+		$menu_array['pdes']['child']['view_pdes'] = array('text'=>'Manage PDEs', 'url'=>base_url() . 'admin/manage_pdes', 'id'=>'menu-manage-pdes', 'classes'=>'');
+		$menu_array['pdes']['child']['create_pde'] = array('text'=>'Add PDE', 'url'=>base_url() . 'admin/load_pde_form', 'id'=>'menu-add-pde', 'classes'=>'');
+		
+		#PDE TYPES
+		$menu_array['pdes']['child']['manage_pdetypes'] = array('text'=>'Manage PDE Types', 'url'=>base_url() . 'admin/manage_pdetypes', 'id'=>'menu-manage-types', 'classes'=>'');
+		$menu_array['pdes']['child']['add_pdetype'] = array('text'=>'Add PDE Type', 'url'=>base_url() . 'admin/load_pdetype_form', 'id'=>'menu-add-pdetype', 'classes'=>'');
+		
+		#Procurement
+        $menu_array['procurement']['attr'] = array('text'=>'Procurement', 'url'=>'javascript:void(0);', 'id'=>'menu_manage_procurement', 'classes'=>'icon-barcode');
+        $menu_array['procurement']['child']['view_procurement_plans'] = array('text'=>'All plans', 'url'=>base_url() . 'procurement', 'id'=>'all_plans', 'classes'=>'');
+        $menu_array['procurement']['child']['create_procurement_plan'] = array('text'=>'Register annual plan', 'url'=>base_url() . 'procurement/new_plan', 'id'=>'new_plans', 'classes'=>'');
+		$menu_array['procurement']['child']['initiate_procurement'] = array('text'=>'Initiate procurement', 'url'=>base_url() . 'procurement/load_initiate_procurement_form', 'id'=>'initiate-procurement', 'classes'=>'');
+
+
+		#bids
+		$menu_array['bids']['attr'] = array('text'=>'Bids', 'url'=>'javascript:void(0);', 'id'=>'menu-bids', 'classes'=>'icon-cogs');
+		$menu_array['bids']['child']['view_bid_invitations'] = array('text'=>'Manage Bid Invitations', 'url'=>base_url() . 'bids/manage_bid_invitations', 'id'=>'menu-manage-bid-invitations', 'classes'=>'');
+		$menu_array['bids']['child']['create_invitation_for_bids'] = array('text'=>'Add Bid Invitation', 'url'=>base_url() . 'bids/load_bid_invitation_form', 'id'=>'menu-add-bid-invitation', 'classes'=>'');
+		$menu_array['bids']['child']['view_bids_received'] = array('text'=>'View received bids','url'=>base_url() . 'receipts/manage_receipts', 'id'=>'menu-manage-receipts', 'classes'=>'');
+		$menu_array['bids']['child']['receive_bids'] = array('text'=>'Received bid(s)','url'=>base_url() . 'receipts/add_receipt', 'id'=>'add-bid-receipt', 'classes'=>'');
+		$menu_array['bids']['child']['select_beb'] = array('text'=>'Publish best evaluated bidder', 'url'=>base_url() . 'bids/publish_bidder/active_procurements', 'id'=>'menu-publish-bidder', 'classes'=>'');
+		
+		#Contracts links
+		$menu_array['Contracts']['attr'] = array('text'=>'Contracts', 'url'=>'javascript:void(0);', 'id'=>'menu-pdes', 'classes'=>'icon-tasks');
+		$menu_array['Contracts']['child']['award_contract'] = array('text'=>'Award Contract', 'url'=>base_url().'contracts/contract_award_form', 'id'=>'menu-contract-signing', 'classes'=>'');
+		$menu_array['Contracts']['child']['view_contracts'] = array('text'=>'Manage Contracts', 'url'=>base_url().'contracts/manage_contracts', 'id'=>'menu-published-contract', 'classes'=>'');
+		$menu_array['Contracts']['child']['manage_contract'] = array('text'=>'Publish Contract Completion', 'url'=>'javascript:void(0);', 'id'=>'menu-contract-completion', 'classes'=>'');
+		
+
+        #Service providers links
+		$menu_array['providers']['attr'] = array('text'=>'Service providers', 'url'=>'javascript:void(0);', 'id'=>'menu-pdes', 'classes'=>'icon-cogs');
+		$menu_array['providers']['child']['view_service_providers'] = array('text'=>'View service providers', 'url'=>'javascript:void(0);', 'id'=>'menu-manage-pdes', 'classes'=>'');
+		$menu_array['providers']['child']['add_service_providers'] = array('text'=>'Add service provider', 'url'=>'javascript:void(0);', 'id'=>'menu-add-user', 'classes'=>'');
+		
+		#Report links
+		$menu_array['reports']['attr'] = array('text'=>'Reports', 'url'=>'javascript:void(0);', 'id'=>'menu-view-reports', 'classes'=>'icon-file');
+		$menu_array['reports']['child']['procurement_plan_reports'] = array('text'=>'Procurement plan reports', 'url'=>base_url().'reports/procurement_plan_reports', 'id'=>'menu-procurement-plan-reports', 'classes'=>'');
+		$menu_array['reports']['child']['invitation_for_bid_reports'] = array('text'=>'Invitation for bids reports', 'url'=>base_url().'reports/invitation_for_bids_reports', 'id'=>'menu-invitation-for-bid-reports', 'classes'=>'');
+		$menu_array['reports']['child']['best_evaluated_bidder_reports'] = array('text'=>'Best evaluated bidder reports', 'url'=>base_url().'reports/report_panel', 'id'=>'menu-best-evaluated-bidder-reports', 'classes'=>'');
+		$menu_array['reports']['child']['contract_award_reports'] = array('text'=>'Contract award reports', 'url'=>base_url().'reports/report_panel', 'id'=>'menu-contract-award-reports', 'classes'=>'');
+		$menu_array['reports']['child']['completed_contracts_report'] = array('text'=>'Completed contracts reports', 'url'=>base_url().'reports/report_panel', 'id'=>'menu-completed-contracts-reports', 'classes'=>'');		
+		
+		return $menu_array;
+	}
+	
+	function menu_crumbs($current = '')
+	{
+		$crumb_str = '';
+		$menu_bucket = $this->menu_bucket();
+		
+		if(!empty($current))
+		{
+			$menu_parent = $this->find_my_parent($current);
+			#exit($menu_parent);
+			if(!empty($menu_parent))
+			{
+				$crumb_str = '<li><a href="'. $menu_bucket[$menu_parent]['attr']['url'] .'">'. $menu_bucket[$menu_parent]['attr']['text'] .'</a>'.
+							 '<span class="divider">&nbsp;</span>'.
+							 '</li>'.
+							 '<li><a href="'. $menu_bucket[$menu_parent]['child'][$current]['url'].'">'. $menu_bucket[$menu_parent]['child'][$current]['text'] .'</a>'.
+							 '<span class="divider-last">&nbsp;</span>'.
+							 '</li>';
+			}
+			elseif(!empty($menu_bucket[$current]))
+			{
+				$crumb_str = '<li><a href="'. $menu_bucket[$current]['attr']['url'].'">'. $menu_bucket[$current]['attr']['text'] .'</a>'.
+							 '<span class="divider-last">&nbsp;</span>'.
+							 '</li>';
+			}
+		}
+		
+		return $crumb_str;
+	}
+	
+	function display_menu($current_menu = '')
+	{
+		$nav_menu_str = '';
+		
+		$menu_array = $this->menu_bucket();
+		
+		if(check_user_access($this, 'manage_reports'));
+		
+		if(!empty($menu_array))
+		{
+			echo '<ul class="sidebar-menu">';
+					  
+			foreach($menu_array AS $text=>$link)
+			{				
+				$parent_links_html = '<li class="'. (!empty($link['child'])? ' has-sub' : '') . 
+									(($text == $current_menu || $text == $this->find_my_parent($current_menu))? ' active open' : '') .'">'.
+					 				'<a href="'. $link['attr']['url'] . '" id="' . $link['attr']['id'] . '" class="">'.
+					 				'<span class="icon-box"><i class="' . $link['attr']['classes'] . '"></i></span>'.
+					 				$link['attr']['text'].
+					 				(!empty($link['child'])? '<span class="arrow"></span>' : '').
+					 				'</a>';
+					 
+				$child_links_html = '';
+					
+				if(!empty($link['child']))
+				{				
+					foreach($link['child'] as $child_text=>$child_link)
+					{
+						if(check_user_access($this, $child_text))
+						{
+							$child_links_html .= '<li class="'. (($child_text == $current_menu)? 'active' : '') .'">'.
+												 '<a href="'.  $child_link['url'] . '" class="">'.
+												 $child_link['text'].
+												 '</a>'.
+												 '</li>';	
+						}
+					}
+				}
+				
+				if(!empty($child_links_html))
+				{
+					print $parent_links_html.
+						  '<ul id="' . $link['attr']['id'] . '-child" class="sub">'. 
+						  $child_links_html .
+						  '</ul></li>';
+				}
+			}		  
+			 
+			echo "</ul>";
+		}
+	}
+	
+	
+	#Find menu parent
+	function find_my_parent($menu_item = '')
+	{
+		$parent_index = '';
+		$menu_items = $this->menu_bucket();
+		
+		foreach($menu_items as $item_key=>$item)
+		{
+			if($item_key == $menu_item)
+			{
+				return '';
+			}
+			else
+			{
+				if(is_array($item) && !empty($item['child']))
+				{
+					foreach($item['child'] as $child_key=>$child)
+					{
+						if($child_key == $menu_item)
+						{
+							return $item_key;
+						}
+					}
+				}
+			}
+		}
+		
+		return $parent_index;
+		
+	}
+	
+}
+
+?>

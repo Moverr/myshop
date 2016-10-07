@@ -1,0 +1,13 @@
+.bordercolor-top {
+    border-top: solid 5px #FBD504 !important;
+}
+
+.btn-primary {
+    color: #161719 !important;
+}
+
+.logo a img {
+    float: left;
+    width: 110px;
+    height: 110px;
+}

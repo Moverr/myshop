@@ -1,0 +1,321 @@
+<?php 
+
+#*********************************************************************************
+# All users have to first hit this class before proceeding to whatever section 
+# they are going to.
+# 
+# It contains the login and other access control functions.
+#*********************************************************************************
+
+class Disposal extends CI_Controller {
+	
+	# Constructor
+	function Disposal() 
+	{	
+		
+		parent::__construct();	
+		$this->load->library('form_validation'); 
+		$this->load->model('users_m','user1');
+		$this->load->model('sys_email','sysemail');
+		$this->session->set_userdata('page_title','Login');
+
+		#MOVER LOADED MODELS
+	#	$this->load->model('Currencies_m');
+		$this->load->model('Proc_m');
+		$this->load->model('Evaluation_methods_m');	
+		$this->load->model('Remoteapi_m');	
+			#MOVER LOADED MODELS
+		$this->load->model('Currency_m','currency');
+		$this->load->model('Disposal_m','disposal');	
+
+		##END
+		date_default_timezone_set(SYS_TIMEZONE);
+		$data = array();		
+		access_control($this);
+	}
+	
+	
+	#Default to login 
+	function index()
+	{
+		redirect('page/home');
+	}
+	
+	 
+	    function load_disposal_record_form(){	  
+		
+		$data['currency'] = $this -> currency -> get_all();	
+		#print_r($data['currency']); exit();
+		$pde =  $this->session->userdata('pdeid');
+		$userid =  $this->session->userdata('userid');	
+		$searchstring = "1 and 1  and  b.userid=".$userid."  and b.pde=".$pde."  "; 	
+
+		$data['disposal_plans'] = $this -> disposal -> fetchdisposal_plans($data,$searchstring);	 
+	
+		$data['page_title'] = 'Add Disposal Record';
+		$data['current_menu'] = 'disposal_notice';
+		$data['view_to_load'] = 'disposal/disposal_form_v';
+		$data['view_data']['form_title'] = $data['page_title'];         
+		$this->load->view('dashboard_v', $data);
+	 
+		}
+		function view_disposal_records(){
+	    $urldata = $this->uri->uri_to_assoc(3, array('m', 'i'));
+		# Pick all assigned data
+		$data = assign_to_data($urldata);	 	
+		$searchstring = "1 and 1 order by   disposal_record.dateadded DESC";
+		$data['disposal_records'] = $this -> disposal -> fetch_disposal_records($data,$searchstring);
+		$data['page_title'] = 'View Disposal Records';
+		$data['current_menu'] = 'view_disposal_notices';
+		$data['view_to_load'] = 'disposal/view_disposals_v';
+		$data['view_data']['form_title'] = $data['page_title'];
+        $data['search_url'] = 'disposal/search_disposal';
+		$this->load->view('dashboard_v', $data);
+		}
+		
+		function search_disposal()
+		{
+			  $urldata = $this->uri->uri_to_assoc(3, array('m', 'i'));
+		# Pick all assigned data
+		$data = assign_to_data($urldata);	 	
+		$searchstring = "1 and 1 order by   disposal_record.dateadded DESC";
+		if($this->input->post('searchQuery'))
+		{
+			$_POST = clean_form_data($_POST);
+			$_POST['searchQuery'] = $searchstring = trim($_POST['searchQuery']);
+			$_POST['searchQuery'] .'%"';
+			$data = $this-> disposal ->search_disposal_records($data,$searchstring);			
+							
+		}
+		else
+		{
+				$data['disposal_records'] = $this -> disposal -> fetch_disposal_records($data,$searchstring);	      
+		}
+		
+	
+		$data['page_title'] = 'View Disposal Records';
+		$data['current_menu'] = 'view_disposal_plan';
+		$data['view_to_load'] = 'disposal/view_disposals_v';
+		$data['view_data']['form_title'] = $data['page_title'];
+        $data['search_url'] = 'disposal/search_disposal';
+		$data['area'] = 'disposal_list';	
+		$this->load->view('includes/add_ons', $data);
+		
+		}
+	 function save_disposal_record(){
+		  
+		 $saved_disposal = $this -> disposal -> insert_disposal($_POST);
+		 print_r($saved_disposal);
+
+		  
+		 }
+	 function archive_delete_restore_disposal_record(){}
+	 function loead_edit_disposal_form(){}
+	 
+	 /*
+	 load bid inviation on  disposal  
+	 */
+	 function load_bid_invitation_form(){
+		 $urldata = $this->uri->uri_to_assoc(3, array('m', 'i'));
+		# Pick all assigned data
+		$data = assign_to_data($urldata);
+		$pde =  $this->session->userdata('pdeid');
+		$userid =  $this->session->userdata('userid');	
+		$searchstring = "  disposal_record.id not in (select disposal_ref_no from disposal_bid_invitation )   and  users.userid=".$userid."  and users.pde=".$pde." order by   disposal_record.dateadded DESC"; 		
+		$data['disposal_records'] = $this -> disposal -> fetch_disposal_records($data,$searchstring);	  
+		
+		$data['page_title'] = 'Add Bid Invitation ';
+		$data['current_menu'] = 'disposal_invitation_for_bids';
+		$data['view_to_load'] = 'disposal/bid_invitation_v';
+		$data['view_data']['form_title'] = $data['page_title'];         
+		$this->load->view('dashboard_v', $data);
+		}
+	 function save_bid_invitation(){		 
+		  $saved_bid_invitation = $this -> disposal -> insert_bid_invitation($_POST);
+		  print_r($saved_bid_invitation);		 	 
+		 }
+	 function delete_archive_restore_bid_invitation(){}
+	 
+	 function check(){
+		 $valueposted = $_POST;
+		 $status = $this -> disposal -> check_disposal_record($valueposted);
+		 print_r($status);
+	 }
+	 function  view_bid_invitations(){	 
+		 $urldata = $this->uri->uri_to_assoc(3, array('m', 'i'));
+		# Pick all assigned data
+		$data = assign_to_data($urldata);
+		$pde =  $this->session->userdata('pdeid');
+		$userid =  $this->session->userdata('userid');	
+		$searchstring = "1 and 1  and  users.userid=".$userid."  and users.pde=".$pde." order by   disposal_bid_invitation.dateadded DESC"; 	
+		$data['disposal_bid_invitaion'] = $this -> disposal -> fetch_disposal_bid_invitations($data,$searchstring);	 
+		
+		$data['page_title'] = 'View Bid Invitations ';
+		$data['current_menu'] = 'view_disposal_bid_invitations';
+		$data['view_to_load'] = 'disposal/view_bid_invitations_v';
+		$data['view_data']['form_title'] = $data['page_title'];   
+		$data['search_url'] = 'disposal/search_bid_invitation';      
+		$this->load->view('dashboard_v', $data);
+	    }
+	 
+	 	function search_bid_invitation()
+		{
+		$urldata = $this->uri->uri_to_assoc(3, array('m', 'i'));
+		# Pick all assigned data
+		$data = assign_to_data($urldata);	 
+		$pde =  $this->session->userdata('pdeid');
+		$userid =  $this->session->userdata('userid');		
+		$searchstring = "1 and 1  and  users.userid=".$userid."  and users.pde=".$pde." order by   disposal_bid_invitation.dateadded DESC"; 	
+			if($this->input->post('searchQuery'))
+			{
+				$_POST = clean_form_data($_POST);
+				$_POST['searchQuery'] = $searchstring = trim($_POST['searchQuery']);
+				$_POST['searchQuery'] .'%"';
+				$data = $this-> disposal ->search_disposal_bid_invitations($data,$searchstring);			
+								
+			}
+			else
+			{
+				$data = $this -> disposal -> fetch_disposal_bid_invitations($data,$searchstring);	      
+			}		
+		$data['page_title'] = 'View Disposal Records';
+		$data['current_menu'] = 'view_disposal_plan';
+		$data['view_to_load'] = 'disposal/view_disposals_v';
+		$data['view_data']['form_title'] = $data['page_title'];
+        $data['search_url'] = 'disposal/search_bid_invitation';
+		$data['area'] = 'bid_invitation_list';	
+		$this->load->view('includes/add_ons', $data);
+		
+		}
+		function add_bid_response(){
+			 $urldata = $this->uri->uri_to_assoc(3, array('m', 'i'));
+		# Pick all assigned data
+		$data = assign_to_data($urldata);
+		$pde =  $this->session->userdata('pdeid');
+		$userid =  $this->session->userdata('userid');	
+		$searchstring = "1 and 1 "; 	
+		#$data['disposal_records'] = $this -> disposal -> fetch_disposal_records($data,$searchstring);
+		$data['disposal_invitations'] = $this -> disposal -> fetch_disposal_bid_invitations($data,$searchstring);	      
+		$data['countrylist'] = $this-> Proc_m -> fetchcountries(); 
+		$data['ropproviders'] =   $this-> Remoteapi_m -> fetchproviders();
+		$data['page_title'] = 'Add Bid Response ';
+		$data['current_menu'] = 'bid_response';
+		$data['view_to_load'] = 'disposal/bid_response_v';
+		$data['view_data']['form_title'] = $data['page_title'];         
+		$this->load->view('dashboard_v', $data);
+		}
+
+		#function to save receipits
+	function save_bid_response(){
+
+		$segment = $this->uri->segment(3);		 
+		$post = $_POST;	 
+
+		switch ($segment) {
+			case 'update':
+				# code...
+			 $id = $this->uri->segment(4);
+			 $result = $this-> disposal -> updatebidresponse($post,$id);
+			 print_r($result);
+				break;
+			 case 'insert':
+			  $result = $this-> disposal -> savebidresponse($post);	
+			  print_r($result);
+
+				break;
+			
+			default:
+				# code...
+
+				break;
+		}
+		
+				 
+			 
+		
+	}
+
+	 function view_bid_responses()
+	{
+		 $urldata = $this->uri->uri_to_assoc(3, array('m', 'i'));
+		# Pick all assigned data
+		$data = assign_to_data($urldata);
+		$pde =  $this->session->userdata('pdeid');
+		$userid =  $this->session->userdata('userid');	
+		$searchstring = "1 and 1  and  users.userid=".$userid."  and users.pde=".$pde." order by   bid_response.dateadded DESC"; 	
+		$data['disposal_bid_invitaion'] = $this -> disposal -> fetch_disposal_reference($data,$searchstring);	 
+		
+		$data['page_title'] = 'View Bid Responses ';
+		$data['current_menu'] = 'view_bid_responses';
+		$data['view_to_load'] = 'disposal/view_bid_responses_v';
+		$data['view_data']['form_title'] = $data['page_title'];   
+		$data['search_url'] = 'disposal/search_bid_invitation';      
+		$this->load->view('dashboard_v', $data);
+	    
+	}
+		
+		
+  function new_disposal_plan()
+ {
+ 	 $pde =  $this->session->userdata('pdeid');
+	 $userid =  $this->session->userdata('userid');	
+ 	 $data['page_title'] = 'New  Disposal Plan';
+     $data['current_menu'] = 'create_disposal_plan';
+     $data['view_to_load'] = 'disposal/new_disposal_plan_v';
+     $data['view_data']['form_title'] = $data['page_title'];
+     $this->load->view('dashboard_v', $data);
+ }
+ function save_disposal_plan()
+ {
+		$segment = $this->uri->segment(3);		 
+		$post = $_POST;	 
+
+		switch ($segment) {
+			case 'update':
+				# code...
+			 $id = $this->uri->segment(4);
+			 $result = $this-> disposal -> updatebidresponse($post,$id);
+			 print_r($result);
+				break;
+			 case 'insert':
+			  $result = $this-> disposal -> save_disposal_plan($post);	
+			  print_r($result);
+
+				break;
+			
+			default:
+				# code...
+
+				break;
+		}
+		
+ }
+ function view_disposal_plan()
+ {
+ 	    $urldata = $this->uri->uri_to_assoc(3, array('m', 'i'));
+		# Pick all assigned data
+		$data = assign_to_data($urldata);
+		$pde =  $this->session->userdata('pdeid');
+		$userid =  $this->session->userdata('userid');	
+		$searchstring = "1 and 1  and  b.userid=".$userid."  and b.pde=".$pde."  order by a.dateadded DESC "; 	
+
+		$data['disposal_plans'] = $this -> disposal -> fetch_disposal_plans($data,$searchstring);	 
+		//	print_r($searchstring); exit();
+		$data['page_title'] = 'View Disposal Plans ';
+		$data['current_menu'] = 'view_disposal_bid_invitations';
+		$data['view_to_load'] = 'disposal/view_disposal_plans_v';
+		$data['view_data']['form_title'] = $data['page_title'];   
+		$data['search_url'] = 'disposal/search_bid_invitation';      
+		$this->load->view('dashboard_v', $data);
+ }
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+
+}
+ 
+?>

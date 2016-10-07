@@ -1,0 +1,10 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.(css|gif|ico|jpg|js|png|swf|txt)$
+RewriteCond $1 !^(index\.php|images|captcha|css|js|robots\.txt|favicon\.ico)
+RewriteRule ^(.*)$ index.php/$1 [L]
+ 
+<Files "index.php">
+AcceptPathInfo On
+</Files>

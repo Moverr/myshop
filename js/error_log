@@ -1,0 +1,4 @@
+[03-Aug-2016 05:42:12 America/Chicago] PHP Fatal error:  Call to undefined function base_url() in /home/synouglt/public_html/js/add_entry_f.php on line 7
+[03-Aug-2016 05:43:53 America/Chicago] PHP Fatal error:  Class 'CI_Controller' not found in /home/synouglt/public_html/js/bids.php on line 6
+[03-Aug-2016 05:44:59 America/Chicago] PHP Fatal error:  Call to undefined function base_url() in /home/synouglt/public_html/js/bid_invitation_form.php on line 118
+[03-Aug-2016 05:46:25 America/Chicago] PHP Fatal error:  Call to undefined function base_url() in /home/synouglt/public_html/js/add_entry_f.php on line 7

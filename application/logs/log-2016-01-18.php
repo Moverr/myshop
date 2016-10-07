@@ -1,0 +1,110 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2016-01-18 12:27:36 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2016-01-18 12:27:36 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 12:27:36 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 12:28:32 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 12:29:05 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 12:29:26 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 12:29:27 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 12:29:27 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 12:31:00 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 13:02:41 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 13:18:43 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 13:18:43 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 13:18:47 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 13:19:40 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 13:19:42 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 13:19:56 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 13:19:56 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 13:19:56 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 13:20:10 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 13:29:40 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 13:54:58 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 13:54:58 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 13:54:58 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 13:54:59 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 13:55:21 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 13:55:28 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 13:55:54 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 13:56:28 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 13:56:34 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 14:13:46 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 14:13:48 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 14:44:21 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 14:44:22 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 14:44:39 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 14:44:39 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 14:44:39 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 14:44:55 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 14:45:11 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 14:45:11 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 14:45:18 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 03:45:21 --> Severity: Notice  --> Undefined index:  E:\xampp\htdocs\ppda\application\views\includes\add_ons.php 1296
+ERROR - 2016-01-18 03:45:21 --> Severity: Notice  --> Undefined index:  E:\xampp\htdocs\ppda\application\views\includes\add_ons.php 1296
+ERROR - 2016-01-18 03:45:21 --> Severity: Notice  --> Undefined index:  E:\xampp\htdocs\ppda\application\views\includes\add_ons.php 1296
+ERROR - 2016-01-18 14:45:42 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 14:46:40 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 14:47:03 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 14:49:32 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 14:53:11 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:20:46 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:20:48 --> Severity: Warning  --> mysql_connect(): No connection could be made because the target machine actively refused it.
+ E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:20:48 --> Unable to connect to the database
+ERROR - 2016-01-18 15:20:51 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:20:53 --> Severity: Warning  --> mysql_connect(): No connection could be made because the target machine actively refused it.
+ E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:20:53 --> Unable to connect to the database
+ERROR - 2016-01-18 15:20:53 --> Severity: 8192  --> mysql_escape_string(): This function is deprecated; use mysql_real_escape_string() instead. E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 319
+ERROR - 2016-01-18 15:20:53 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:20:55 --> Severity: Warning  --> mysql_connect(): No connection could be made because the target machine actively refused it.
+ E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:20:55 --> Unable to connect to the database
+ERROR - 2016-01-18 15:20:55 --> Severity: Warning  --> mysql_query() expects parameter 2 to be resource, boolean given E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 179
+ERROR - 2016-01-18 15:20:55 --> Severity: Warning  --> mysql_num_rows() expects parameter 1 to be resource, null given E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_result.php 37
+ERROR - 2016-01-18 15:20:55 --> Severity: Warning  --> mysql_num_rows() expects parameter 1 to be resource, null given E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_result.php 37
+ERROR - 2016-01-18 15:20:55 --> Severity: 8192  --> mysql_escape_string(): This function is deprecated; use mysql_real_escape_string() instead. E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 319
+ERROR - 2016-01-18 15:20:55 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:20:57 --> Severity: Warning  --> mysql_connect(): No connection could be made because the target machine actively refused it.
+ E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:20:57 --> Unable to connect to the database
+ERROR - 2016-01-18 15:20:57 --> Severity: Warning  --> mysql_query() expects parameter 2 to be resource, boolean given E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 179
+ERROR - 2016-01-18 15:20:57 --> Severity: Warning  --> mysql_num_rows() expects parameter 1 to be resource, null given E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_result.php 37
+ERROR - 2016-01-18 15:20:57 --> Severity: Warning  --> mysql_num_rows() expects parameter 1 to be resource, null given E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_result.php 37
+ERROR - 2016-01-18 15:20:57 --> Severity: 8192  --> mysql_escape_string(): This function is deprecated; use mysql_real_escape_string() instead. E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 319
+ERROR - 2016-01-18 15:20:57 --> Severity: 8192  --> mysql_escape_string(): This function is deprecated; use mysql_real_escape_string() instead. E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 319
+ERROR - 2016-01-18 15:20:57 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:20:59 --> Severity: Warning  --> mysql_connect(): No connection could be made because the target machine actively refused it.
+ E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:20:59 --> Unable to connect to the database
+ERROR - 2016-01-18 15:20:59 --> Severity: Warning  --> mysql_query() expects parameter 2 to be resource, boolean given E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 179
+ERROR - 2016-01-18 15:20:59 --> Severity: Warning  --> mysql_num_rows() expects parameter 1 to be resource, null given E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_result.php 37
+ERROR - 2016-01-18 15:20:59 --> Severity: Warning  --> mysql_num_rows() expects parameter 1 to be resource, null given E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_result.php 37
+ERROR - 2016-01-18 15:20:59 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:21:13 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:21:14 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:21:34 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:22:24 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:23:09 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:23:24 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:23:28 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:23:31 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:23:55 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:24:14 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:24:32 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:42:07 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 15:42:11 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 04:42:12 --> Severity: Notice  --> Undefined index:  E:\xampp\htdocs\ppda\application\views\includes\add_ons.php 1296
+ERROR - 2016-01-18 04:42:12 --> Severity: Notice  --> Undefined index:  E:\xampp\htdocs\ppda\application\views\includes\add_ons.php 1296
+ERROR - 2016-01-18 04:42:12 --> Severity: Notice  --> Undefined index:  E:\xampp\htdocs\ppda\application\views\includes\add_ons.php 1296
+ERROR - 2016-01-18 15:44:19 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 16:13:34 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 16:18:31 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 16:18:42 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 16:19:19 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 16:19:25 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 16:20:26 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-01-18 16:20:37 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\xampp\htdocs\ppda\system\database\drivers\mysql\mysql_driver.php 73

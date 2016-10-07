@@ -1,0 +1,230 @@
+/*
+Credits:
+Code snippet by @maridlcrmn (Follow me on Twitter)
+Images by Nike.com (http://www.nike.com/us/en_us/)
+Logo by Sneaker-mission.com (http://www.sneaker-mission.com/)
+*/
+
+body {
+    font-family:'Lato','Open Sans', sans-serif;
+    font-size: 12px;
+    line-height: 1.428571429;
+    color: #333;
+    background-color: #fff;
+}
+
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+font-family: 'Lato',sans-serif;
+font-weight: bold;
+line-height: 1.1;
+color: inherit;
+}
+.navbar-brand {
+    width: 70px;
+    height: 50px;
+    background: url('http://www.sneaker-mission.com/uploads/3/1/2/7/31279819/5617441.png') no-repeat center center;
+    background-size: 50px;
+}
+
+.nav-tabs {
+    display: inline-block;
+    border-bottom: none;
+    padding-top: 15px;
+    font-weight: bold;
+    font-size:12px;
+}
+.nav-tabs > li > a,
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus,
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+    border: none;
+    border-radius: 0;
+}
+
+.nav-list { border-bottom: 1px solid #eee; }
+.nav-list > li {
+    padding: 20px 15px 15px;
+    border-left: 1px solid #eee;
+}
+.nav-list > li:last-child { border-right: 1px solid #eee; }
+.nav-list > li > a:hover { text-decoration: none; }
+.nav-list > li > a > span {
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.mega-dropdown { position: static !important; }
+.mega-dropdown-menu {
+    padding: 20px 15px 15px;
+    text-align: center;
+    width: 100%;
+}
+
+#bs-megadropdown-tabs
+{
+    background: #006E93; /* Old browsers */
+}
+
+.navbar-default .navbar-nav>li>a {
+    /* color: #777; */
+    color: #fff;
+}
+
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus, .navbar-nav>li>a.current {
+    color: #fff;
+    background: #004F6A; /* Old browsers */
+}
+
+.navbar-form {
+
+}
+
+/* individual: webkit */
+#nav_src::-webkit-input-placeholder { color:#fff; text-transform:uppercase;}
+
+.navbar-nav li a { font-family: "PT Sans Narrow"; font-size:14px; }
+
+
+/* individual: mozilla */
+#nav_src::-moz-placeholder { color:#fff; text-transform:uppercase;}
+
+#nav_src input[type=text]
+{
+    background: #2c539e; /* Old browsers */
+}
+
+.main_area_home
+{
+
+}
+#login-form ul { list-style:none; }
+
+#login-form ul li { float:right; margin-left:11px; }
+
+#login-form ul li input[type="submit"], form#content_login_form ul li input[type="submit"], .form-search input[type="submit"] {
+    background: none repeat scroll 0 0 black;
+    border: medium none;
+    border-radius: 2px;
+    color: white;
+    display: inline-block;
+    font-size: 14px;
+    padding: 6px 10px;
+    transition: all 0.2s ease-out 0s;
+    cursor:pointer;
+    line-height:normal;
+}
+
+form#content_login_form ul li { margin-bottom:15px }
+
+#login-form ul li input[type="submit"]:hover, #login-form ul li input[type="submit"]:focus, form#content_login_form ul li input[type="submit"]:focus,  form#content_login_form ul li input[type="submit"]:hover, .form-search input[type="submit"]:hover{
+    background: none repeat scroll 0 0 #333333;
+    box-shadow: 0 1px 4px #b4b4b4;
+    text-shadow: 0 1px 1px #333;
+    transform: translate(0px, -2px);
+}
+
+
+#login-form ul li input[type="text"]:focus, #login-form ul li input[type="password"]:focus { 
+    outline: medium none !important;
+    border-bottom: 2px solid #d7d7d7 !important;
+    color:#000000;
+}
+
+#login-form ul li input[type="text"], #login-form ul li input[type="password"] {
+width: 100%; 
+background-color: #ebebeb !important;
+/* border-bottom: 2px solid #d7d7d7 !important; */
+border-width: 0 0 2px !important;
+box-shadow: 0 0 1px #d7d7d7 inset;
+box-sizing: border-box !important;
+color: #666666 !important;
+margin-bottom: 5px !important;
+padding: 5px !important;
+transition: all 0.2s ease-out 0s; }
+
+form#content_login_form ul { list-style:none; padding:0; margin:0;}
+
+form#content_login_form ul li label, #login-form form ul li input { display:block; }
+
+form#content_login_form ul li label { font-size:18px }
+
+form#content_login_form ul li input[type="text"], form#content_login_form ul li input[type="password"] { color:#000000; font-size:12px; width:60%; background-color: #ebebeb !important;
+    border-bottom: 2px solid #d7d7d7 !important;
+    border-radius: 0 !important;
+    border-width: 0 0 2px !important;
+    box-shadow: 0 0 1px #d7d7d7 inset;
+    box-sizing: border-box !important;
+    color: #666666 !important;
+    display: inline-block !important;
+    font-size: 18px !important;
+    height: 2.4em;
+    margin-bottom: 5px !important;
+    padding: 5px 15px !important;
+    transition: all 0.2s ease-out 0s; }
+    
+form#content_login_form ul li input[type="text"]:focus, form#content_login_form ul li input[type="password"]:focus { border-color: #666666 !important;
+    box-shadow: 0 0 1px #000000 inset;
+    outline: medium none !important;
+}
+
+form#search-tenders div.date-picker { float:left; width:120px; margin-left: 0px; }
+
+form#search-tenders div.date-picker input { width:120px; }
+
+.alert {
+    background-color: #fcf8e3;
+    border: 1px solid #fbeed5;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 8px 35px 8px 14px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+#reg-login-links { margin-top:20px; }
+#reg-login-links a { color:#333333; font-weight:bold; font-size:22px; } 
+#reg-login-links a:hover { text-decoration:none; }
+#reg-login-links a, #reg-login-links div { float:right; margin-left:10px;} 
+
+#search-form .search-box { background:#000000; color:#FFF; height:50px; width:100%; font-size:16px; }
+
+.current_tenders { font-size:14px; }
+
+#search-form .form-group { position:relative; width:100% }
+
+#search-form .form-group a { position:absolute; right:5%; top:20% }
+
+#search-form { margin:0; padding:0; width:25%; }
+
+.content-wrapper {/* background:#F5F5EB; */}
+
+ul.ifb-doc-list { list-style:decimal; }
+
+ul.ifb-doc-list li { margin-bottom:10px; }
+
+/*MAIN CONTAINER*/
+.container {
+width: 100%;
+}
+
+.row {
+margin:10px 0px;    
+
+}
+
+@font-face {
+    font-family: "PT Sans Narrow";
+    font-style: normal;
+    font-weight: 400;
+    src: local("PT Sans Narrow"), local("PTSans-Narrow"), url("UyYrYy3ltEffJV9QueSi4RdbPw3QSf9R-kE0EsQUn2A.woff") format("woff");
+   
+}
+.username{font-size:16px;}
+.procurement_subject{font-size:16px;}
+.procurement_pde{font-size:10px; text-transform:uppercase;}
+
+.label{border-radius: 0px;}
