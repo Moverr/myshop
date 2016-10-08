@@ -23,7 +23,6 @@
                            <?=(in_array('item', $requiredfields)? '<span class="help-inline">Please Enter Financial Year </span>': '')?>
 
 
-
                     </div>
                 </div>
 
@@ -118,11 +117,14 @@ var item_id = 0;
 var quantity = 0;
 var selling_px = 0;
 var exchange_rate = 0;
-var reserve_price_exchange_rate;
+var reserve_price = 0;
+var reserve_price_exchange_rate = 0;
+var reserve_price_currency = 1;
 var available_stock = "";
 
 var item_quantity = '';
 var unitselling_price = '';
+var total_unit_sellingpx = '';
 
 function open_dialog(title,msg){
 
@@ -178,6 +180,7 @@ function open_dialog(title,msg){
                 return;
             }
 
+
        }
 
 
@@ -185,7 +188,30 @@ function open_dialog(title,msg){
        //Selling Price : should not be greater than  available stock in the 
        if(available_stock > 0 )
        {
-          
+          //Check Quantity
+          if(available_stock < item_quantity )
+          {
+           open_dialog("Stock Information ","Availalble Stock "+available_stock+" is Less Than the Entered Quantity "+item_quantity);   
+           return;         
+          }
+          //Check Reseve Price 
+          total_reserve_price = (reserve_price_currency > 1) ? (reserve_price * reserve_price_exchange_rate )  : reserve_price ;
+ 
+           
+          // Total Unit Selling Px
+         total_unit_sellingpx = (cur_id > 1) ? (unitselling_price * unitselling_price_exchange_rate )  : unitselling_price ;
+
+         if(total_unit_sellingpx >  total_reserve_price ){
+             open_dialog("Sales Information "," Total Selling Price "+total_unit_sellingpx+" UGx is Greater Than the Total Reserve Price "+total_reserve_price+" UGx <br/> <strong>NOTE</strong> These amounts are changed to Uganda Shillings based on the exchange rates set ");   
+           return;   
+         }
+
+
+
+          //var total_reserve_px = 
+
+
+        
        }
        else
        {
@@ -237,6 +263,9 @@ function open_dialog(title,msg){
                          console.log(server_response);
 
                          available_stock = (server_response.stock_added - server_response.stock_removed);
+                         reserve_price_currency = server_response.reserve_price_currency;
+                         reserve_price_exchange_rate = server_response.reserve_price_exchange_rate;
+                         reserve_price = server_response.reserve_price;
 
                          var item_details = "<ul>"+
                                             "<li> Item Name </li>"+

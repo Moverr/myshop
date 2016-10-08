@@ -186,8 +186,7 @@ class Pos extends CI_Controller {
 
 
 	function new_sale(){
-
-        
+       
   		  
 		# Get the passed details into the url data array if any
         $urldata = $this->uri->uri_to_assoc(3, array('m', 'i'));
@@ -199,7 +198,6 @@ class Pos extends CI_Controller {
 
         //check permission
         check_user_access($this, 'add_stock', 'redirect');
-
 
         if(!empty($_POST))
         {
@@ -215,8 +213,7 @@ class Pos extends CI_Controller {
 	        }
 
 
-	        $response = $this->stock->save_stock($user_id,$details);
- 
+	        $response = $this->stock->save_stock($user_id,$details); 
 
 			$data['userdetails'] =  !empty($response['userdetails']) ? $response['userdetails']  : "" ; 
 
@@ -249,9 +246,7 @@ class Pos extends CI_Controller {
 
         $data['currencies'] = $this->db->get_where('currencies', array('isactive'=>'Y'))->result_array();
 
-
         $data['items'] = $this->item->get_items($data);
-
 
 	  #fetch_ifb_procurement_entries
         $data['page_title'] = (!empty($data['i'])? 'Edit  Sale  ' : 'New Sale ');
