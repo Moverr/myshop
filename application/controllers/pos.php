@@ -260,6 +260,50 @@ class Pos extends CI_Controller {
 		 
 	}
 
+    # Add to Cart
+    function add_to_cart(){
+        # Get the passed details into the url data array if any
+        $urldata = $this->uri->uri_to_assoc(3, array('m', 'i'));
+        # Pick all assigned data
+        $data = assign_to_data($urldata);
+
+        if(!empty($_POST)){
+
+            $_POST['id'] = $_POST['item_id'];           
+
+            #$this->session->set_userdata('alluserdata', $userdetails);
+            $item_list =  $this->session->userdata('item_list')? $this->session->userdata('item_list'): array();
+
+            foreach ($item_list as $key => $row) {
+                # code...
+                
+                if($row['item_id'] == $_POST['item_id']){
+                    unset($item_list[$key]);
+
+                }
+
+
+            }
+
+
+            array_push($item_list, $_POST);
+            $this->session->set_userdata('item_list', $item_list);
+
+            print_r($this->session->userdata('item_list'));
+
+            // load n adon to put inin the added things in the column 
+
+            //Load Addon :: 
+
+ 
+
+        }
+
+
+
+
+    }
+
 
 
 

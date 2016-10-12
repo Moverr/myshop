@@ -69,7 +69,7 @@
                            <input type="text" name="unitselling_price"
                                    value="<?= (!empty($formdata['unitselling_price']) ? addCommas($formdata['unitselling_price'], 0) : '') ?>"
                                    class="input-small numbersonly unitselling_price"  style="margin-top:-21px;"
-                                     placeholder="Selling Price" id="unitselling_price"   />
+                                     placeholder="Unit Selling Price" id="unitselling_price"   />
                             
                                 
                               <input class=" input-small numbersonly rate unitselling_price_exchange_rate " name="unitselling_price_exchange_rate" placeholder="Exchange rate" type="text" value="<?=(!empty($formdata['unitselling_price_exchange_rate'])? addCommas($formdata['unitselling_price_exchange_rate'], 1) : '' )?>"
@@ -154,16 +154,18 @@ function open_dialog(title,msg){
 
       // Get the quantity
       item_quantity = $("#item_quantity").val();
-      if(item_quantity.length <= 1){
+      if(item_quantity.length  == 0){
           open_dialog("Sales Information ","Please Enter the Item Quantity"); 
           $("#item_quantity").focus();
+          return;
       }
 
       // Unit Selling Price 
       unitselling_price = $("#unitselling_price").val();         
-      if(unitselling_price.length <= 1){
+      if(unitselling_price.length < 1){
           open_dialog("Sales Information ","Please Enter Unit Selling Price "); 
           $("#item_quantity").focus();
+          return;
       }
 
        unitselling_price_exchange_rate = 1;
@@ -182,6 +184,10 @@ function open_dialog(title,msg){
 
 
        }
+       else
+       {
+          unitselling_price_exchange_rate = 1;
+       }
 
 
 
@@ -189,7 +195,7 @@ function open_dialog(title,msg){
        if(available_stock > 0 )
        {
           //Check Quantity
-          if(available_stock < item_quantity )
+          if(parseInt(available_stock) < parseInt(item_quantity) )
           {
            open_dialog("Stock Information ","Availalble Stock "+available_stock+" is Less Than the Entered Quantity "+item_quantity);   
            return;         
@@ -199,17 +205,54 @@ function open_dialog(title,msg){
  
            
           // Total Unit Selling Px
-         total_unit_sellingpx = (cur_id > 1) ? (unitselling_price * unitselling_price_exchange_rate )  : unitselling_price ;
+         total_unit_sellingpx = (cur_id > 1) ? parseInt(unitselling_price * unitselling_price_exchange_rate )  : parseInt(unitselling_price);
 
-         if(total_unit_sellingpx >  total_reserve_price ){
-             open_dialog("Sales Information "," Total Selling Price "+total_unit_sellingpx+" UGx is Greater Than the Total Reserve Price "+total_reserve_price+" UGx <br/> <strong>NOTE</strong> These amounts are changed to Uganda Shillings based on the exchange rates set ");   
+ 
+       
+         if(parseInt(total_unit_sellingpx) <  parseInt(total_reserve_price) ){
+             open_dialog("Sales Information "," Unit  Selling Price "+total_unit_sellingpx+" UGx is Less Than the Unit Reserve Price "+total_reserve_price+" UGx <br/> <strong>NOTE</strong> These amounts are changed to Uganda Shillings based on the exchange rates set ");   
            return;   
          }
 
+        var form_data = {};
 
+        form_data['item_id'] = item_id;
+        form_data['item_name'] = '';
+        form_data['quantity'] = quantity;
+        form_data['unit_selling_price'] = unitselling_price;
+        form_data['unit_selling_price_exchange_rate'] = unitselling_price_exchange_rate;
+        form_data['unit_selling_price_currency'] = cur_id;
 
-          //var total_reserve_px = 
+        form_data['reserve_price'] = reserve_price;
+        form_data['reserve_price_exchange_rate'] = reserve_price_exchange_rate;
+        form_data['reserve_price_currency'] = reserve_price_currency;
+        
 
+        console.log(form_data);
+
+        console.log("Proccessing");  
+
+         url = getBaseURL()+"pos/add_to_cart";
+
+         $.ajax({
+                    url:  url,
+                     type: 'POST',
+                    data: form_data,
+                    success: function(data, textStatus, jqXHR){
+                        alert("Server Response");
+                        console.log(data);
+                         
+                    },
+                    error:function(data , textStatus, jqXHR)
+                    {
+                        open_dialog("Ajax Error","Server Side Error <br/> Contact System Administrator");
+
+                        console.log(data);
+                    return 0;
+                    }
+                });
+
+        
 
         
        }
