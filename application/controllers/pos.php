@@ -204,28 +204,11 @@ class Pos extends CI_Controller {
 	        $user_id = $this->session->userdata('userid');
 	        $details = $_POST;
 
-
-
-	        //When Edititng 
-	        if(!empty($data['i']))
-	        {
-	        	  $details['id'] = decryptValue($data['i']);
-	        }
-
-
-	        $response = $this->stock->save_stock($user_id,$details); 
-
-			$data['userdetails'] =  !empty($response['userdetails']) ? $response['userdetails']  : "" ; 
-
-			$data['msg'] = !empty($response['msg']) ? $response['msg']  : "" ;
-			$data['requiredfields'] = !empty($response['requiredfields']) ? $response['requiredfields']  : "" ;
  
-			if(!empty($response['status']) && $response['status'] == 'success')
-			{
-			   $data['view_data']['formdata'] = "";			 	
-			}
+             print_r($_POST);
 
-			  
+             exit();
+             
 
 
         }
@@ -241,12 +224,16 @@ class Pos extends CI_Controller {
 
 	        }
 
+             $this->session->set_userdata('item_list', '');
+
+
 
         }
 
         $data['currencies'] = $this->db->get_where('currencies', array('isactive'=>'Y'))->result_array();
 
         $data['items'] = $this->item->get_items($data);
+
 
 	  #fetch_ifb_procurement_entries
         $data['page_title'] = (!empty($data['i'])? 'Edit  Sale  ' : 'New Sale ');
@@ -286,14 +273,16 @@ class Pos extends CI_Controller {
             }
 
 
-            array_push($item_list, $_POST);
-            $this->session->set_userdata('item_list', $item_list);
+        array_push($item_list, $_POST);
+        $this->session->set_userdata('item_list', $item_list);
 
-            print_r($this->session->userdata('item_list'));
+        $data['cart'] = $this->session->userdata('item_list');
 
-            // load n adon to put inin the added things in the column 
+           
 
-            //Load Addon :: 
+        $this->load->view('pos/cart_v', $data);
+
+
 
  
 

@@ -9,7 +9,7 @@
     </div>
     <div class="widget-body">
         <!-- BEGIN FORM-->
-        <form action="<?=base_url() . 'stock/add_stock' . ((!empty($i))? '/i/'.$i : '' )?>" enctype="multipart/form-data" method="post" class="form-horizontal">
+        <form action="<?=base_url() . 'pos/new_sale' . ((!empty($i))? '/i/'.$i : '' )?>" enctype="multipart/form-data" method="post" class="form-horizontal">
           <div class="form_details">
             <div class="user_details">
 
@@ -90,6 +90,8 @@
                     <div class="alert controls stock_details" >
                     SOMETHING TO SHOW 
                     </div>
+                    <br/>
+                    <div class="cart controls " id="cart"></div>
                 </div>
 
 
@@ -100,8 +102,8 @@
                 
             
             <div class="form-actions">
-                <button type="submit" name="save" value="save" class="btn blue"><i class="fa fa-ok"></i> Save</button>
-                <button type="submit" name="cancel" value="cancel" class="btn"><i class="fa fa-remove"></i> Cancel</button>
+                <button type="submit" name="save" value="save" class="btn blue">  Save</button>
+                <button type="submit" name="cancel" value="cancel" class="btn"> Cancel</button>
             </div>
         </form>
         <!-- END FORM-->
@@ -125,6 +127,8 @@ var available_stock = "";
 var item_quantity = '';
 var unitselling_price = '';
 var total_unit_sellingpx = '';
+
+var item_name =  '';
 
 function open_dialog(title,msg){
 
@@ -217,8 +221,8 @@ function open_dialog(title,msg){
         var form_data = {};
 
         form_data['item_id'] = item_id;
-        form_data['item_name'] = '';
-        form_data['quantity'] = quantity;
+        form_data['item_name'] = item_name;
+        form_data['quantity'] = item_quantity;
         form_data['unit_selling_price'] = unitselling_price;
         form_data['unit_selling_price_exchange_rate'] = unitselling_price_exchange_rate;
         form_data['unit_selling_price_currency'] = cur_id;
@@ -239,7 +243,11 @@ function open_dialog(title,msg){
                      type: 'POST',
                     data: form_data,
                     success: function(data, textStatus, jqXHR){
-                        alert("Server Response");
+                      $("#cart").html(data);
+
+                       $(".stock_details").fadeIn("fast");
+
+
                         console.log(data);
                          
                     },
@@ -274,9 +282,15 @@ function open_dialog(title,msg){
 
 
       
+    function clear_sales_form(){
+      $("#item_quantity").val('');
+      $("#unitselling_price").val('');
+
+      }
         
     $(".stocked_item").change(function(){
            
+           clear_sales_form();
             //Get the ID of the item
              item_id = $(this).val();
              $(".stock_details").fadeIn("fast");
@@ -309,6 +323,7 @@ function open_dialog(title,msg){
                          reserve_price_currency = server_response.reserve_price_currency;
                          reserve_price_exchange_rate = server_response.reserve_price_exchange_rate;
                          reserve_price = server_response.reserve_price;
+                         item_name = server_response.name;
 
                          var item_details = "<ul>"+
                                             "<li> Item Name </li>"+
